@@ -14,7 +14,9 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     }
-})
+});
+
+
 
 const userModel = mongoose.model('userAuth', userSchema);
 

@@ -8,8 +8,7 @@ const register = async (request, response) => {
         const {name, email, password} = request.body;
 
         if(!name || !email || !password){
-            return response.status(400)
-                .json({
+            return response.status(400).json({
                     success: false,
                     message: "data field is require",
                 });
@@ -48,7 +47,6 @@ const register = async (request, response) => {
                 success: false,
                 message : err.message,
             });
-            console.log(err);
     }
 }
 
@@ -100,7 +98,28 @@ const login = async (request, response) => {
     }
 }
 
+const resetPassword = async (request, response) => {
+    try {
+        const userEmail = request.body;
+        if(!userEmail){
+            return response.status.json({
+                success: false,
+                message: "user does not exist",
+            });
+        }
+
+
+        
+    } catch (err) {
+        return response.status.json({
+            success: false,
+            message: err.message
+        });
+    }
+}
+
 module.exports = {
     login,
-    register
+    register,
+    resetPassword,
 }
