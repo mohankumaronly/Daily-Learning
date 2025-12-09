@@ -123,3 +123,5 @@ module.exports = {
     register,
     resetPassword,
 }
+
+// added for the commit purpose
